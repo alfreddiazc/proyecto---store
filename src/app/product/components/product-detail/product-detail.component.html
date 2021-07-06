@@ -1,0 +1,41 @@
+
+<div *ngIf="product">
+
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title appHigtligth > {{ product.title | uppercase }}</mat-card-title>
+          <mat-card-subtitle> {{ product.price | currency }} </mat-card-subtitle>
+        </mat-card-header>
+        <div class="crop-image">
+            <img mat-card-image  [src]="product.image" alt=" ">
+        </div>
+        <mat-card-content>
+          <p>
+            {{ product.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+    
+            <a mat-stroked-button color="primary" routerLink="/products"> Ir atras</a>
+            <button mat-raised-button color="primary" (click)="createProduct()">Crear producto</button>
+            <button mat-raised-button color="primary" (click)="updateProduct()">Modificar producto</button>
+            <button mat-raised-button color="primary" (click)="deleteProduct()">Eliminar producto</button>
+            
+        </mat-card-actions>
+      </mat-card>
+
+
+   <!--  <div>
+        <img [src]="product.image" alt="">
+    </div>
+    <div>
+        <ul>
+            <li>Nombre: {{ product.title}}</li>
+            <li>Precio: {{ product.price  | currency}}</li>
+            
+        </ul>
+        <p>{{ product.description }}</p>
+    </div> -->
+</div>
+

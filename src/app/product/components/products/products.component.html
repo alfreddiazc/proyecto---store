@@ -1,0 +1,11 @@
+
+<!-- ngFor - recorrer los productos -->
+<div class="container">
+    <div class="product-grid">
+        <app-product 
+            *ngFor="let product of productos" 
+            (addCarts)="addCarrito($event)" 
+            [producto]= "product">
+        </app-product>
+    </div>
+</div>
